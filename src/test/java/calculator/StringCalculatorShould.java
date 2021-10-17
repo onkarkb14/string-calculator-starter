@@ -34,4 +34,9 @@ class StringCalculatorShould {
     void sum_of_multiple_numbers() {
         assertEquals(45, sc.add("1,2,3,4,5,6,7,8,9"));
     }
+
+    @Test
+    void  sum_with_delimeter_sn() {
+        assertEquals(6, sc.add("1\n2,3"));
+    }
 }
