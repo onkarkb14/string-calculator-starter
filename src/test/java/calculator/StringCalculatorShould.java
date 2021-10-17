@@ -77,4 +77,10 @@ class StringCalculatorShould {
     {
         assertEquals(6,sc.add("//[*][%]\n1*2%3"));
     }
+
+    @Test
+    void can_handle_multiple_delimiters()
+    {
+        assertEquals(6,sc.add("//[**][%%]\n1**2%%3"));
+    }
 }
