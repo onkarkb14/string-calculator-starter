@@ -46,4 +46,12 @@ class StringCalculatorShould {
         assertEquals(3,sc.add("//;\n1;2"));
     }
 
+    @Test
+    void negative_not_allowed()
+    {
+        assertThrows(IllegalArgumentException.class,() -> {
+            sc.add("1,-5,-6");
+        }, "negatives not allowed");
+    }
+
 }

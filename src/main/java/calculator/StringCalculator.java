@@ -1,5 +1,8 @@
 package calculator;
 
+import java.util.ArrayList;
+import java.util.List;
+
 class StringCalculator {
 
     public int add(String input) {
@@ -17,15 +20,25 @@ class StringCalculator {
             arrout.append(input);
         }
         int sum = 0;
+        boolean mark = false;
+        List<String> negativeS = new ArrayList<>();
+        for(String s : arrout.toString().split("["+dili+"]"))
+        {
 
-
-            for(String s : arrout.toString().split("["+dili+"]"))
+            if(!s.isBlank() && Integer.parseInt(s) < 0)
             {
-
-                sum+= !s.isBlank() ? Integer.parseInt(s) : 0;
+                mark = true;
+                negativeS.add(s + " ");
             }
+            sum+= !s.isBlank() ? Integer.parseInt(s) : 0;
+        }
 
+        if(mark)
+        {
+            throw new IllegalArgumentException("negatives not allowed"+ negativeS);
+        }
         return sum;
+
 
 
 
