@@ -4,8 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 class StringCalculator {
-
+private int count;
+public StringCalculator (){
+    this.count=0;
+}
     public int add(String input) {
+    this.count +=1;
         if(input.length() == 0)
             return 0;
 
@@ -38,12 +42,8 @@ class StringCalculator {
             throw new IllegalArgumentException("negatives not allowed"+ negativeS);
         }
         return sum;
-
-
-
-
-
-
     }
-
+    public int getCount() {
+    return this.count;
+    }
 }

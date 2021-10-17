@@ -6,10 +6,12 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class StringCalculatorShould {
+    int c =0;
     StringCalculator sc;
     @BeforeEach
     void begin()
     {
+        c++;
         sc=new StringCalculator();
     }
     @Test
@@ -54,4 +56,8 @@ class StringCalculatorShould {
         }, "negatives not allowed");
     }
 
+    @Test
+    void no_of_count(){
+        assertEquals(c-1,sc.getCount());
+    }
 }
