@@ -29,4 +29,9 @@ class StringCalculatorShould {
 
         assertEquals(1, sc.add("1"));
     }
+
+    @Test
+    void sum_of_multiple_numbers() {
+        assertEquals(45, sc.add("1,2,3,4,5,6,7,8,9"));
+    }
 }
