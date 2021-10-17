@@ -6,15 +6,29 @@ class StringCalculator {
         if(input.length() == 0)
             return 0;
 
-        String[] arrS = input.split(",");
-        String[] arrP = input.split("[,\n]");
+        StringBuilder dili = new StringBuilder("\\n,");
+        StringBuilder arrout = new StringBuilder();
 
-        int sum = 0;
-        for(String s : arrP)
-        {
-            sum+=Integer.parseInt(s);
+        // checking input filted
+        if ( input.startsWith("//") ){
+            dili.append(input, input.indexOf("//")+2, input.indexOf("\n")); // String between // and \n
+            arrout.append( input.substring(input.indexOf("\n")) );
+        }else{
+            arrout.append(input);
         }
+        int sum = 0;
+
+
+            for(String s : arrout.toString().split("["+dili+"]"))
+            {
+
+                sum+= !s.isBlank() ? Integer.parseInt(s) : 0;
+            }
+
         return sum;
+
+
+
 
 
     }

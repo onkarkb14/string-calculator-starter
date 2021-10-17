@@ -39,4 +39,11 @@ class StringCalculatorShould {
     void  sum_with_delimeter_sn() {
         assertEquals(6, sc.add("1\n2,3"));
     }
+
+    @Test
+    void to_change_a_delimiter()
+    {
+        assertEquals(3,sc.add("//;\n1;2"));
+    }
+
 }
