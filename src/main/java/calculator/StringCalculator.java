@@ -34,7 +34,7 @@ public StringCalculator (){
                 mark = true;
                 negativeS.add(s + " ");
             }
-            sum+= !s.isBlank() ? Integer.parseInt(s) : 0;
+            sum+= s.isBlank() ? 0 : (Integer.parseInt(s)) > 1000 ? 0 : Integer.parseInt(s);
         }
 
         if(mark)

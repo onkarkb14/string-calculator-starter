@@ -60,4 +60,10 @@ class StringCalculatorShould {
     void no_of_count(){
         assertEquals(c-1,sc.getCount());
     }
+
+    @Test
+    void no_less_than_1000(){
+        assertEquals(2,sc.add("1002,2"));
+    }
+
 }
